@@ -15,7 +15,7 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css">
 	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>a
+	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
 	<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/javascript/application.js" ></script>
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>
