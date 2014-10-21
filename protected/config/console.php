@@ -11,11 +11,11 @@ return array(
 
 	// application components
 	'components'=>array(
+		/*
 		'db'=>array(
 			'connectionString' => 'sqlite:'.dirname(__FILE__).'/../data/testdrive.db',
 		),
-		// uncomment the following to use a MySQL database
-		/*
+		*/
 		'db'=>array(
 			'connectionString' => 'mysql:host=localhost;dbname=testdrive',
 			'emulatePrepare' => true,
@@ -23,7 +23,10 @@ return array(
 			'password' => '',
 			'charset' => 'utf8',
 		),
-		*/
+
+		// database settings are configured in database.php
+		'db'=>require(dirname(__FILE__).'/database.php'),
+
 		'log'=>array(
 			'class'=>'CLogRouter',
 			'routes'=>array(
