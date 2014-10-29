@@ -1,2 +1,7 @@
 protected/runtime/application.log
-/nbproject/private/nbproject/
+nbproject/project.properties
+nbproject/project.xml
+nbproject/private/config.properties
+nbproject/private/private.properties
+nbproject/private/private.xml
+
