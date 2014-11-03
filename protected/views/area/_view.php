@@ -13,9 +13,12 @@
 	<?php echo CHtml::encode($data->area_name); ?>
 	<br />
 
+        <b><?php echo CHtml::encode($data->getAttributeLabel('client_id')); ?>:</b>
+	<?php echo CHtml::encode($data->client_id); ?>
+	<br />
+
 	<b><?php echo CHtml::encode($data->getAttributeLabel('geo')); ?>:</b>
 	<?php echo CHtml::encode($data->geo); ?>
 	<br />
-
 
 </div>

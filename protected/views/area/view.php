@@ -24,5 +24,6 @@ $this->menu=array(
 		'id',
 		'area_name',
 		'geo',
+                'client_id',
 	),
 )); ?>

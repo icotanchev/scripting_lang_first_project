@@ -1,7 +1,7 @@
 jQuery(function($) {
   initialize();
   ListenForShowAreaButton();
-  // listenForInsertAreaButton();
+    ListenForSaveAreaButton();
 });
 
 var globalMap;
@@ -74,9 +74,15 @@ function placeMarker(event) {
   points.push(event.latLng);
 }
 
+function ListenForSaveAreaButton(){
+    jQuery('#create_area_button').bind('click', function(){
+    showArea();
+  });
+}
+
 function ListenForShowAreaButton(){
   jQuery('#show_zone_id').bind('click', function(){
-    showArea();
+    jQuery("#points").val(points);
   });
 }
 
@@ -94,15 +100,6 @@ function showArea() {
   count = 0;
   
   jQuery("#points").val(points);
-  
-//  jQuery("#point_1").val(JSON.stringify(points[0]));
-//  jQuery("#point_2").val(JSON.stringify(points[1]));
-//  jQuery("#point_3").val(JSON.stringify(points[2]));
-  // for (var k = 0; k < markers.length; k++) {
-  //   k[i].setMap(NULL);
-  // }
-
-  //jQuery('#Area_name').val = "GeomFromText('POLYGON("+ points + ")')";
 
   points = [];
   markers = [];
@@ -110,16 +107,3 @@ function showArea() {
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);
-
-// function listenForInsertAreaButton() {
-//   jQuery('#add_zone_id').bind('click', function(){
-//     jQuery.ajax({
-//       type: 'POST',
-//       url: "<?php echo Yii::app()->createUrl('area/create'); ?>",
-//       data: {"points":points},
-//       dataType: "text",
-//       success: alert(points)
-//     });
-//     points = [];
-//   }); 
-// }

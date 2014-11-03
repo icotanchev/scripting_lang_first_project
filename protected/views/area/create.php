@@ -45,7 +45,7 @@ $this->menu=array(
     <button type="button" class="btn btn-primary" name="show" id="show" onclick="showArea()">Show Zone</button>
     <br>
     <br>
-    <div class="row buttons">
+    <div class="row buttons" id="create_area_button">
         <?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
     </div>
 

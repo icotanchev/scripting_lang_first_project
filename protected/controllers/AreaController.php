@@ -71,9 +71,9 @@ class AreaController extends Controller
             $words = $_POST['points'];
             $words = str_replace(", ",@"  ", $words);
             $name = $_POST['Area']['area_name'];
+            $client_id = $_POST['Area']['client_id'];
             
-            $sql= "INSERT INTO tbl_area (area_name, geo , client_id) VALUES ('$name', GeomFromText('POLYGON(".$words.")'),1);";
-//                . "($point_1->k $point_1->B), ($point_2->k $point_2->B), ($point_3->k $point_3->B), ($point_1->k $point_1->B))'));";
+            $sql= "INSERT INTO tbl_area (area_name, geo , client_id) VALUES ('$name', GeomFromText('POLYGON(".$words.")'),$client_id);";
             
             $connection=Yii::app()->db;
 

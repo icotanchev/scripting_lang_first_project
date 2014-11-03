@@ -56,7 +56,7 @@ class Area extends CActiveRecord
 			'id' => 'ID',
 			'area_name' => 'Area Name',
 			'geo' => 'Geo',
-			'client_id' => 'Client ID'
+			'client_id' => 'Client ID',
 		);
 	}
 
