@@ -1,9 +1,0 @@
-2014/10/21 19:19:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "area/index".' in /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/CWebApplication.php:286
-Stack trace:
-#0 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('area/index')
-#1 /Applications/XAMPP/xamppfiles/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
-#2 /Applications/XAMPP/xamppfiles/htdocs/yii_projects/scripting_lang_first/index.php(13): CApplication->run()
-#3 {main}
-REQUEST_URI=/yii_projects/scripting_lang_first/index.php?r=area/index
-HTTP_REFERER=http://localhost/yii_projects/scripting_lang_first/
----
