@@ -30,12 +30,14 @@ $this->menu=array(
     </div>
     <br>
     <br>
-    <!--<?php echo $form->errorSummary($model); ?>
 
-    <?php echo $form->error($model,'area_name'); ?>
-    <?php echo $form->labelEx($model,'geo'); ?>
-    <?php echo $form->textField($model,'geo'); ?>
-    <?php echo $form->error($model,'geo'); ?> -->
+    <div class="row">
+      <?php 
+        echo CHtml::activeDropDownList($model, 'client_id', $model->getClients())
+      ?>
+    </div>
+    <br>
+    <br>
     
     <input type="hidden" name="point_1" id="point_1">
     <input type="hidden" name="point_2" id="point_2">

@@ -31,7 +31,7 @@ class Area extends CActiveRecord
 			array('geo', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, area_name, geo', 'safe', 'on'=>'search'),
+			array('id, area_name, geo, client_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -43,6 +43,7 @@ class Area extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+                    'clients'=>array(self::BELONGS_TO, 'Client', 'id'),
 		);
 	}
 
@@ -55,6 +56,7 @@ class Area extends CActiveRecord
 			'id' => 'ID',
 			'area_name' => 'Area Name',
 			'geo' => 'Geo',
+			'client_id' => 'Client ID'
 		);
 	}
 
@@ -78,6 +80,7 @@ class Area extends CActiveRecord
 
 		$criteria->compare('id',$this->id);
 		$criteria->compare('area_name',$this->area_name,true);
+		$criteria->compare('client_id',$this->client_id,true);
 		$criteria->compare('geo',$this->geo,true);
 
 		return new CActiveDataProvider($this, array(
@@ -94,5 +97,14 @@ class Area extends CActiveRecord
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
+	}
+
+	public function getClients()
+	{
+            $names = array();
+            foreach (Client::model()->findAll() as $k){
+                array_push($names, $k->name);
+            }
+            return $names;
 	}
 }
