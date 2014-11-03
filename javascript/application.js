@@ -36,7 +36,6 @@ function placeMarker(event) {
 
   var l = document.createElement("label");
   l.innerHTML = "Ponint"+count;
-
   s.appendChild(l);
 
   var lat = document.createElement("input");
@@ -63,11 +62,7 @@ function placeMarker(event) {
 
   document.getElementById("point" + count + "Lat").value = event.latLng.lat();
   document.getElementById("point" + count + "Lng").value = event.latLng.lng();
-<<<<<<< HEAD
-
-=======
   
->>>>>>> b3af45b27d4fe00c182dbddf855b79edcdc9e2ba
   var marker = new google.maps.Marker({
       position: event.latLng,
   });
@@ -107,18 +102,6 @@ function showArea() {
 
   //jQuery('#Area_name').val = "GeomFromText('POLYGON("+ points + ")')";
 
-<<<<<<< HEAD
-  newArea.setMap(globalMap);
-  count = 0;
-
-  // for (var k = 0; k < markers.length; k++) {
-  //   k[i].setMap(NULL);
-  // }
-
-  jQuery('#Area_name').val = "GeomFromText('POLYGON("+ points + ")')";
-
-=======
->>>>>>> b3af45b27d4fe00c182dbddf855b79edcdc9e2ba
   points = [];
   markers = [];
   count = 0;
