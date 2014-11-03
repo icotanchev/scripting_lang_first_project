@@ -66,14 +66,14 @@ class AreaController extends Controller
 
         // Uncomment the following line if AJAX validation is needed
         // $this->performAjaxValidation($model);              
-        if(isset($_POST['Area']) && isset($_POST['point_1']))
+        if(isset($_POST['Area']) && isset($_POST['points']))
         {
-            $point_1 = json_decode($_POST['point_1']);
-            $point_2 = json_decode($_POST['point_2']);
-            $point_3 = json_decode($_POST['point_3']);
+            $words = $_POST['points'];
+            $words = str_replace(", ",@"  ", $words);
             $name = $_POST['Area']['area_name'];
             
-            $sql= "INSERT INTO tbl_area (area_name, geo) VALUES ('$name', GeomFromText('POLYGON(($point_1->k $point_1->B), ($point_2->k $point_2->B), ($point_3->k $point_3->B), ($point_1->k $point_1->B))'));";
+            $sql= "INSERT INTO tbl_area (area_name, geo , client_id) VALUES ('$name', GeomFromText('POLYGON(".$words.")'),1);";
+//                . "($point_1->k $point_1->B), ($point_2->k $point_2->B), ($point_3->k $point_3->B), ($point_1->k $point_1->B))'));";
             
             $connection=Yii::app()->db;
 
