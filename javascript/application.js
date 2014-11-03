@@ -93,9 +93,11 @@ function showArea() {
   newArea.setMap(globalMap);
   count = 0;
   
-  jQuery("#point_1").val(JSON.stringify(points[0]));
-  jQuery("#point_2").val(JSON.stringify(points[1]));
-  jQuery("#point_3").val(JSON.stringify(points[2]));
+  jQuery("#points").val(points);
+  
+//  jQuery("#point_1").val(JSON.stringify(points[0]));
+//  jQuery("#point_2").val(JSON.stringify(points[1]));
+//  jQuery("#point_3").val(JSON.stringify(points[2]));
   // for (var k = 0; k < markers.length; k++) {
   //   k[i].setMap(NULL);
   // }

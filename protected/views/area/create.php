@@ -39,9 +39,7 @@ $this->menu=array(
     <br>
     <br>
     
-    <input type="hidden" name="point_1" id="point_1">
-    <input type="hidden" name="point_2" id="point_2">
-    <input type="hidden" name="point_3" id="point_3">
+    <input type="hidden" name="points" id="points">
     <br>
     <br>
     <button type="button" class="btn btn-primary" name="show" id="show" onclick="showArea()">Show Zone</button>
