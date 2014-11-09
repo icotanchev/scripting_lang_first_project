@@ -1,7 +1,7 @@
 jQuery(function($) {
   initialize();
   ListenForShowAreaButton();
-    ListenForSaveAreaButton();
+  ListenForSaveAreaButton();
 });
 
 var globalMap;

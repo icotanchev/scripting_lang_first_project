@@ -12,13 +12,13 @@
 	<b><?php echo CHtml::encode($data->getAttributeLabel('area_name')); ?>:</b>
 	<?php echo CHtml::encode($data->area_name); ?>
 	<br />
-
+        
         <b><?php echo CHtml::encode($data->getAttributeLabel('client_id')); ?>:</b>
-	<?php echo CHtml::encode($data->client_id); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('geo')); ?>:</b>
-	<?php echo CHtml::encode($data->geo); ?>
-	<br />
+        <?php
+            echo array_values(Client::getClientName($data->client_id))[0]['name'];
+        ?><br />
+        
+        <b><?php echo CHtml::encode($data->getAttributeLabel('geo')); ?>:</b>
+        <?php echo Area::getAreaPoints($data->id);?><br />
 
 </div>

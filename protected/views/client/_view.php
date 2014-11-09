@@ -21,5 +21,4 @@
 	<?php echo CHtml::encode($data->position); ?>
 	<br />
 
-
 </div>

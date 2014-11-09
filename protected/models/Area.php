@@ -107,4 +107,14 @@ class Area extends CActiveRecord
             }
             return $names;
 	}
+        
+        public function getAreaPoints($area_id){
+            $sql= "select astext(geo) from tbl_area where id = ".$area_id.";";
+            
+            $connection=Yii::app()->db;
+
+            $command=$connection->createCommand($sql);
+            $result = $command->queryAll();//execute();
+            return str_replace("POLYGON(", "", $result[0]['astext(geo)']);
+        }
 }

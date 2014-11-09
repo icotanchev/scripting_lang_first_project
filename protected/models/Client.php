@@ -102,4 +102,14 @@ class Client extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+        
+        public function getClientName($client_id){
+            $sql= "select name from tbl_client where id = ".$client_id.";";
+            
+            $connection=Yii::app()->db;
+
+            $command=$connection->createCommand($sql);
+            $result = $command->queryAll();//execute();
+            return $result;
+        }
 }
