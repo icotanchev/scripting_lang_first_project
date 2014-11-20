@@ -3,7 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/icko/php_projects/yii_projects/scripting_lang_first/protected/controllers/AreaController.php</file>
+            <file>file:/Users/icko/php_projects/yii_projects/scripting_lang_first/protected/models/Area.php</file>
+            <file>file:/Users/icko/php_projects/yii_projects/scripting_lang_first/protected/views/area/view.php</file>
+            <file>file:/Users/icko/php_projects/yii_projects/scripting_lang_first/javascript/application.js</file>
+            <file>file:/Users/icko/php_projects/yii_projects/scripting_lang_first/protected/models/Client.php</file>
         </group>
     </open-files>
 </project-private>

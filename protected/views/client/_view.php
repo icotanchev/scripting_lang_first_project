@@ -17,8 +17,8 @@
 	<?php echo CHtml::encode($data->info); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('position')); ?>:</b>
+<!--	<b><?php echo CHtml::encode($data->getAttributeLabel('position')); ?>:</b>
 	<?php echo CHtml::encode($data->position); ?>
-	<br />
+	<br />-->
 
 </div>

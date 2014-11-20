@@ -112,4 +112,14 @@ class Client extends CActiveRecord
             $result = $command->queryAll();//execute();
             return $result;
         }
+        
+        public function getClientPosition($client_id){
+            $sql= "select astext(position) from tbl_client where id = ".$client_id.";";
+            
+            $connection=Yii::app()->db;
+
+            $command=$connection->createCommand($sql);
+            $result = $command->queryAll();//execute();
+            return str_replace("POLYGON(", "", $result[0]['astext(position)']);
+        }
 }
