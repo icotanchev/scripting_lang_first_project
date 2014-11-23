@@ -91,3 +91,5 @@ $points = Area::getAreaPoints($model->id);
     google.maps.event.addDomListener(window, 'load', initialize);
 </script>
     
+<?php var_dump($model->areaContainsPoint($model->client_id));
+

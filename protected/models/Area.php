@@ -117,4 +117,12 @@ class Area extends CActiveRecord
             $result = $command->queryAll();//execute();
             return str_replace("POLYGON(", "", $result[0]['astext(geo)']);
         }
+        
+        public function areaContainsPoint($client_id) {
+            $sql = "select id from tbl_area where CONTAINS(tbl_area.geo, (select asText(tbl_client.position) from tbl_client where tbl_client.id = ". $client_id. "));";
+            $connection=Yii::app()->db;
+            $command=$connection->createCommand($sql);
+            $result = $command->queryAll();//execute();
+            return $result;
+        }
 }
