@@ -69,11 +69,13 @@ class AreaController extends Controller
         if(isset($_POST['Area']) && isset($_POST['points']))
         {
             $words = $_POST['points'];
-            $words = str_replace(", ",@"  ", $words);
+            $words = str_replace(", "," ", $words);
+            $words = str_replace("(","", $words);
+            $words = str_replace(")","", $words);
             $name = $_POST['Area']['area_name'];
             $client_id = $_POST['Area']['client_id'];
             
-            $sql= "INSERT INTO tbl_area (area_name, geo , client_id) VALUES ('$name', GeomFromText('POLYGON(".$words.")'),$client_id);";
+            $sql= "INSERT INTO tbl_area (area_name, geo , client_id) VALUES ('$name', ST_GEOMFROMTEXT('POLYGON((".$words."))'),$client_id);";
             
             $connection=Yii::app()->db;
 

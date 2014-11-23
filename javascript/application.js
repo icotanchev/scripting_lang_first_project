@@ -99,7 +99,7 @@ function showArea() {
   newArea.setMap(globalMap);
   count = 0;
   
-  jQuery("#points").val(points);
+  jQuery("#points").val(points+','+points[0]);
 
   points = [];
   markers = [];
