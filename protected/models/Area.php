@@ -101,7 +101,7 @@ class Area extends CActiveRecord
 
 	public function getClients()
 	{
-            $names = array();
+            $names = array('select blank');
             foreach (Client::model()->findAll() as $k){
                 array_push($names, $k->name);
             }
@@ -120,7 +120,6 @@ class Area extends CActiveRecord
         
         public function areaContainsPoint($client_id, $area_id) {
             $polygon = "select geo from tbl_area where tbl_area.id = ".$area_id.";";
-//            $sql = "select id from tbl_area where id = ".$area_id." and CONTAINS(tbl_area.geo, (select tbl_client.position from tbl_client where tbl_client.id = ". $client_id. "));";
             $sql = "select ST_CONTAINS((select tbl_area.geo from tbl_area where tbl_area.id = ".$area_id."), (select tbl_client.position from tbl_client where tbl_client.id = ". $client_id. "));";
             $connection=Yii::app()->db;
             $command=$connection->createCommand($sql);

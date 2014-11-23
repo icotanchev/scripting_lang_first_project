@@ -63,9 +63,7 @@ class AreaController extends Controller
     public function actionCreate()
     {
         $model=new Area;
-
-        // Uncomment the following line if AJAX validation is needed
-        // $this->performAjaxValidation($model);              
+           
         if(isset($_POST['Area']) && isset($_POST['points']))
         {
             $words = $_POST['points'];
@@ -81,8 +79,6 @@ class AreaController extends Controller
 
             $command=$connection->createCommand($sql);
             $command->execute();
-            if($model->save())
-                $this->redirect(array('view','id'=>$model->id));
         }
 
         $this->render('create',array(
@@ -90,24 +86,35 @@ class AreaController extends Controller
         ));
     }
 
-    /**
-     * Updates a particular model.
-     * If update is successful, the browser will be redirected to the 'view' page.
-     * @param integer $id the ID of the model to be updated
-     */
     public function actionUpdate($id)
     {
             $model=$this->loadModel($id);
 
             // Uncomment the following line if AJAX validation is needed
             // $this->performAjaxValidation($model);
+            
+        if(isset($_POST['Area']) && isset($_POST['points']))
+        {
+            $words = $_POST['points'];
+            $words = str_replace(", "," ", $words);
+            $words = str_replace("(","", $words);
+            $words = str_replace(")","", $words);
+            $name = $_POST['Area']['area_name'];
+            $client_id = $_POST['Area']['client_id'];
+            
+//            $sql= "INSERT OR REPLACE INTO tbl_area (area_name, geo , client_id) VALUES ('$name', ST_GEOMFROMTEXT('POLYGON((".$words."))'),$client_id);";
+            $sql= "UPDATE tbl_area SET area_name = '$name', geo = ST_GEOMFROMTEXT('POLYGON((".$words."))'), client_id='$client_id' where id = '$model->id';";
+            $connection=Yii::app()->db;
 
-            if(isset($_POST['Area']))
-            {
-                    $model->attributes=$_POST['Area'];
-                    if($model->save())
-                            $this->redirect(array('view','id'=>$model->id));
-            }
+            $command=$connection->createCommand($sql);
+            $command->execute();
+        }
+//            if(isset($_POST['Area']))
+//            {
+//                    $model->attributes=$_POST['Area'];
+//                    if($model->save())
+//                            $this->redirect(array('view','id'=>$model->id));
+//            }
 
             $this->render('update',array(
                     'model'=>$model,

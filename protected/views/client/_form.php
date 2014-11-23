@@ -26,15 +26,9 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'info'); ?>
-		<?php echo $form->textArea($model,'info',array('rows'=>6, 'cols'=>50)); ?>
-		<?php echo $form->error($model,'info'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'position'); ?>
-		<?php echo $form->textField($model,'position'); ?>
-		<?php echo $form->error($model,'position'); ?>
+            <?php echo $form->labelEx($model,'info'); ?>
+            <?php echo $form->textArea($model,'info',array('rows'=>6, 'cols'=>50)); ?>
+            <?php echo $form->error($model,'info'); ?>
 	</div>
 
 	<div class="row buttons">
