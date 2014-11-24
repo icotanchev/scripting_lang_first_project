@@ -17,26 +17,32 @@ $this->menu=array(
 $points = Area::getAreaPoints($model->id);
 ?>
 
-<h1>View Area #<?php echo $model->id; ?></h1>
+<h1>Area "<?php echo $model->area_name; ?>"</h1>
 
 <div id="map_card" style="width: 50em; height: 30em; position: relative; overflow: hidden; -webkit-transform: translateZ(0px); background-color: rgb(229, 227, 223);"></div>
 
-<b><?php echo CHtml::encode($model->getAttributeLabel('area_name')); ?>:</b>
-<?php echo CHtml::encode($model->area_name); ?><br />
-        
-<b><?php echo CHtml::encode($model->getAttributeLabel('client_id')); ?>:</b>
-<?php echo array_values(Client::getClientName($model->client_id))[0]['name'];?><br />
+<!--<b><?php echo CHtml::encode($model->getAttributeLabel('area_name')); ?>:</b>
+<?php echo CHtml::encode($model->area_name); ?><br />-->
 
-<b><?php echo CHtml::encode($model->getAttributeLabel('geo')); ?>:</b>
+<div class="client_label">
+    <b><?php echo "Client" ?>:</b>
+    <?php echo CHtml::link(CHtml::encode(array_values(Client::getClientName($model->client_id))[0]['name']), array('client/view', 'id' => $model->client_id));?><br />
+</div>  
+
+<div class="client_label"
+    <b><?php echo CHtml::encode($model->getAttributeLabel('geo')); ?>:</b>
+</div>
+
 <div id="points_location_id"><?php echo $points; ?></div>
+<div id="area_real_loc"></div>
 <input type="hidden" name="client_pos" id="client_position" value="<?php echo Client::model()->getClientPosition($model->client_id);?>">
 <script>
     var points = jQuery("#points_location_id").html().slice(0, -1).split(',');
     
     function pointsFromString(array){
         var arr = [];
-
-        for(k = 0; k< array.length; k++){
+        
+        for(k = 0; k< array.length - 1; k++){
             ar = {};
             ar["lat"] = points[k].replace("(", "").replace(")", "").split(' ')[0];
             ar["lot"] = points[k].replace("(", "").replace(")", "").split(' ')[1];
@@ -51,14 +57,15 @@ $points = Area::getAreaPoints($model->id);
     
     var mapOptions = {
         zoom: 16,
-        center: myPosition,
+        center: myPosition
     };
 
     var map = new google.maps.Map(document.getElementById('map_card'), mapOptions);
     var poligon_points = [];
     
     for(k=0; k< positions.length; k++) {
-        var currentPosition = new google.maps.LatLng(positions[k]["lat"], positions[k]["lot"])
+        var currentPosition = new google.maps.LatLng(positions[k]["lat"], positions[k]["lot"]);
+        addPoint(positions[k]["lat"],positions[k]["lot"]);
         var marker = new google.maps.Marker({
           position: currentPosition,
           map: map
@@ -87,6 +94,47 @@ $points = Area::getAreaPoints($model->id);
         },
         map: map
     });
+    
+    var count = 0;
+    
+    function addPoint(latt, lng) {
+        count++;
+        
+        var s = document.createElement("div");
+        s.setAttribute('class', 'form-group');
+        s.setAttribute('style', 'margin-left:8px;margin-top:10px');
+
+        var l = document.createElement("label");
+        l.innerHTML = "Point "+count;
+        s.appendChild(l);
+
+        var lat = document.createElement("input");
+        lat.type = "text";
+        lat.className =  "form-control";
+        lat.placeholder = "Enter Lat";
+        lat.id = "point"+count+"Lat";
+        lat.setAttribute('style', 'margin-left:10px');
+        lat.setAttribute('disabled', 'disabled');
+
+        s.appendChild(lat);
+
+        var ln = document.createElement("input");
+        ln.type = "text";
+        ln.className =  "form-control";
+        ln.placeholder = "Enter Lng";
+        ln.id = "point"+count+"Lng";
+        ln.setAttribute('style', 'margin-left:10px');
+        ln.setAttribute('disabled', 'disabled');
+
+        s.appendChild(ln);
+        
+        document.getElementById("area_real_loc").appendChild(s);
+
+        document.getElementById("point" + count + "Lat").value = latt;
+        document.getElementById("point" + count + "Lng").value = lng;
+    }
+    
+    jQuery('#points_location_id').remove();
     
     google.maps.event.addDomListener(window, 'load', initialize);
 </script>

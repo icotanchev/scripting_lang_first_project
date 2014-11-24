@@ -80,6 +80,12 @@ body
 	text-decoration:none;
 }
 
+#area_real_loc 
+{
+   margin-left: 6em;
+   font-size: 17px; 
+}
+
 div.flash-error, div.flash-notice, div.flash-success
 {
 	padding:.8em;
@@ -133,6 +139,8 @@ div.view
 	padding: 10px;
 	margin: 10px 0;
 	border: 1px solid #C9E0ED;
+        font-size: 115%;
+        background-color: #FEFEFE;;
 }
 
 div.view_with_contain
@@ -142,6 +150,26 @@ div.view_with_contain
 	border: 1px solid #C9E0ED;
         background-color: #04B404;
         color: white;
+        font-size: 115%;
+}
+
+div.view_with_padding
+{
+    margin:8px 0 0 9px;
+}
+
+div.client_label
+{
+   margin-top:10px;
+   font-size: 21px;
+}
+
+input.form-control
+{
+   width:200px; 
+   height:30px;
+   font-size:18px;
+   color:#1657BD;
 }
 
 div.breadcrumbs

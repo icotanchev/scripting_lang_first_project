@@ -35,7 +35,7 @@ function placeMarker(event) {
   s.setAttribute('style', 'margin-left:8px;margin-top:10px');
 
   var l = document.createElement("label");
-  l.innerHTML = "Ponint"+count;
+  l.innerHTML = "Point "+count;
   s.appendChild(l);
 
   var lat = document.createElement("input");

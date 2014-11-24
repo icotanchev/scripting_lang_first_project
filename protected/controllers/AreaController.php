@@ -73,6 +73,14 @@ class AreaController extends Controller
             $name = $_POST['Area']['area_name'];
             $client_id = $_POST['Area']['client_id'];
             
+//            if ($client_id == 0) {
+//                  $this->render('update',array(
+//                    'model'=>$model,
+//                  ));
+//                  
+//                return;
+//            }
+            
             $sql= "INSERT INTO tbl_area (area_name, geo , client_id) VALUES ('$name', ST_GEOMFROMTEXT('POLYGON((".$words."))'),$client_id);";
             
             $connection=Yii::app()->db;

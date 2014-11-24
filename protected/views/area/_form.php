@@ -28,7 +28,9 @@
     <input type="hidden" name="points" id="points">
 <!--    <button type="button" class="btn btn-primary" name="show" id="show" onclick="showArea()">Show Zone</button>-->
     <div class="row buttons" id="create_area_button">
-        <?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+        <?php
+        $optins = array('style'=>'width:13em; height:2em;');
+        echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save', $optins); ?>
     </div>
 
 <?php $this->endWidget(); ?>
