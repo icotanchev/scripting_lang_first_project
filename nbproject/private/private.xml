@@ -3,10 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/Users/icko/php_projects/yii_projects/scripting_lang_first/css/bg.gif</file>
+            <file>file:/Users/icko/php_projects/yii_projects/scripting_lang_first/protected/views/layouts/main.php</file>
             <file>file:/Users/icko/php_projects/yii_projects/scripting_lang_first/protected/models/Area.php</file>
-            <file>file:/Users/icko/php_projects/yii_projects/scripting_lang_first/protected/views/area/view.php</file>
-            <file>file:/Users/icko/php_projects/yii_projects/scripting_lang_first/javascript/application.js</file>
-            <file>file:/Users/icko/php_projects/yii_projects/scripting_lang_first/protected/models/Client.php</file>
+            <file>file:/Users/icko/php_projects/yii_projects/scripting_lang_first/protected/views/client/_form.php</file>
+            <file>file:/Users/icko/php_projects/yii_projects/scripting_lang_first/protected/controllers/AreaController.php</file>
+            <file>file:/Users/icko/php_projects/yii_projects/scripting_lang_first/css/main.css</file>
+            <file>file:/Users/icko/php_projects/yii_projects/scripting_lang_first/protected/views/area/_form.php</file>
+            <file>file:/Users/icko/php_projects/yii_projects/scripting_lang_first/css/form.css</file>
         </group>
     </open-files>
 </project-private>
