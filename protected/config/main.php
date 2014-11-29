@@ -11,6 +11,7 @@ Yii::setPathOfAlias('yiibooster', dirname(__FILE__) . DIRECTORY_SEPARATOR . '../
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'Clients Tracking',
+	'defaultController' => 'area/index',
 	// preloading 'log' component
 	'preload'=>array('log',
                          'bootstrap'),
