@@ -14,7 +14,7 @@
         'yiibooster.widgets.TbActiveForm',
              array(
                 'id' => 'area-form',
-                'htmlOptions' => array('class' => 'well'), // for inset effect
+                'htmlOptions' => array('class' => 'well', 'onsubmit' => 'return validateClientPresense();'), // for inset effect
                 'method'=>'post',
             )
         );
@@ -42,5 +42,4 @@
 <input type="hidden" name="points" id="points">
 <?php $this->endWidget();
 unset($form); ?>
-</div>
 </div>

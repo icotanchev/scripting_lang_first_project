@@ -1,6 +1,5 @@
 jQuery(function($) {
   initialize();
-  ListenForShowAreaButton();
   ListenForSaveAreaButton();
 });
 
@@ -75,15 +74,23 @@ function placeMarker(event) {
 }
 
 function ListenForSaveAreaButton(){
-    jQuery('#create_area_button').bind('click', function(){
+  jQuery('#create_area_button').bind('click', function(){
     showArea();
   });
 }
 
-function ListenForShowAreaButton(){
-  jQuery('#show_zone_id').bind('click', function(){
-    jQuery("#points").val(points);
-  });
+function validateClientPresense(){
+  if(jQuery("#Area_client_id").val() == '0'){
+    alert('Chose client');
+    return false;
+  } else {
+    showArea();
+    count = 0;
+    points = [];
+    markers = [];
+    count = 0;
+    return true;
+  }
 }
 
 function showArea() {
@@ -97,13 +104,8 @@ function showArea() {
   });
   
   newArea.setMap(globalMap);
-  count = 0;
   
   jQuery("#points").val(points+','+points[0]);
-  
-  points = [];
-  markers = [];
-  count = 0;
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);
