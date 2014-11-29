@@ -124,6 +124,7 @@ class Area extends CActiveRecord
             $connection=Yii::app()->db;
             $command=$connection->createCommand($sql);
             $result = $command->queryAll();//execute();
+//            var_dump($result);
             return $result;
         }
 }

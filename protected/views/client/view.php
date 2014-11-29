@@ -18,9 +18,9 @@ $this->menu=array(
 
 <h1>View Client #<?php echo $model->id; ?></h1>
 
-<div id="map_card" style="width: 50em; height: 30em; position: relative; overflow: hidden; -webkit-transform: translateZ(0px); background-color: rgb(229, 227, 223);"></div>
+<div id="map_card" style="width: 50em; height: 30em; position: relative; overflow: hidden; -webkit-transform: translateZ(0px); background-color: rgb(229, 227, 223); margin-bottom: 20px;"></div>
 
-<?php $this->widget('zii.widgets.CDetailView', array(
+<?php $this->widget('yiibooster.widgets.TbDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
 		'id',

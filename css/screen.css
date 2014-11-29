@@ -60,7 +60,7 @@ dl dt {font-weight:bold;}
 dd {margin-left:1.5em;}
 table {margin-bottom:1.4em;width:100%;}
 th {font-weight:bold;}
-thead th {background:#c3d9ff;}
+/*thead th {background:#c3d9ff;}*/
 th, td, caption {padding:4px 10px 4px 5px;}
 tfoot {font-style:italic;}
 caption {background:#eee;}
@@ -85,7 +85,7 @@ caption {background:#eee;}
 .span-2 {width:70px;}
 .span-3 {width:110px;}
 .span-4 {width:150px;}
-.span-5 {width:190px;}
+.span-5 {width:220px;}
 .span-6 {width:230px;}
 .span-7 {width:270px;}
 .span-8 {width:310px;}

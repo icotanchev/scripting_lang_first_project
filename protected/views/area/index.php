@@ -11,9 +11,16 @@ $this->menu=array(
 	array('label'=>'Manage Area', 'url'=>array('admin')),
 );
 ?>
+<?php $this->widget(
+    'yiibooster.widgets.TbLabel',
+    array(
+        'context' => 'default',
+        'label' => 'Areas'
+    )
+); ?>
 
-<h1>Areas</h1>
-<?php $this->widget('zii.widgets.CListView', array(
+<?php $this->widget('yiibooster.widgets.TbListView', array(
 	'dataProvider'=>$dataProvider,
 	'itemView'=>'_view',
-)); ?>
+    )
+); ?>

@@ -5,17 +5,21 @@
 
 // This is the main Web application configuration. Any writable
 // CWebApplication properties can be configured here.
+
+Yii::setPathOfAlias('yiibooster', dirname(__FILE__) . DIRECTORY_SEPARATOR . '../extensions/yiibooster');
+
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
-	'name'=>'My Web Application',
-
+	'name'=>'Clients Tracking',
 	// preloading 'log' component
-	'preload'=>array('log'),
-
+	'preload'=>array('log',
+                         'bootstrap'),
+                     
 	// autoloading model and component classes
 	'import'=>array(
 		'application.models.*',
 		'application.components.*',
+                'yiibooster.helpers.TbHtml',
 	),
 
 	'modules'=>array(
@@ -29,6 +33,10 @@ return array(
 
 	// application components
 	'components'=>array(
+                 'bootstrap'=>array(
+                                'class'=>'yiibooster.components.Booster',
+                 ),
+            
 		'user'=>array(
 			// enable cookie-based authentication
 			'allowAutoLogin'=>true,

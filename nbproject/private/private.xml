@@ -3,10 +3,42 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/icko/php_projects/yii_projects/scripting_lang_first/protected/models/Area.php</file>
-            <file>file:/Users/icko/php_projects/yii_projects/scripting_lang_first/protected/views/area/view.php</file>
-            <file>file:/Users/icko/php_projects/yii_projects/scripting_lang_first/javascript/application.js</file>
-            <file>file:/Users/icko/php_projects/yii_projects/scripting_lang_first/protected/models/Client.php</file>
+            <file>file:/Applications/XAMPP/htdocs/yii_projects/scripting_lang_first/protected/views/area/_view.php</file>
+            <file>file:/Applications/XAMPP/htdocs/yii_projects/scripting_lang_first/protected/views/area/create.php</file>
+            <file>file:/Applications/XAMPP/htdocs/yii_projects/scripting_lang_first/protected/views/client/_view.php</file>
+            <file>file:/Applications/XAMPP/htdocs/yii_projects/scripting_lang_first/protected/models/Client.php</file>
+            <file>file:/Applications/XAMPP/htdocs/yii_projects/scripting_lang_first/protected/views/layouts/column2.php</file>
+            <file>file:/Applications/XAMPP/htdocs/yii_projects/scripting_lang_first/protected/views/area/view.php</file>
+            <file>file:/Applications/XAMPP/htdocs/yii_projects/scripting_lang_first/protected/controllers/SiteController.php</file>
+            <file>file:/Applications/XAMPP/htdocs/yii_projects/scripting_lang_first/protected/views/area/_search.php</file>
+            <file>file:/Applications/XAMPP/htdocs/yii_projects/scripting_lang_first/protected/components/Controller.php</file>
+            <file>file:/Applications/XAMPP/htdocs/yii_projects/scripting_lang_first/css/main.css</file>
+            <file>file:/Applications/XAMPP/htdocs/yii_projects/scripting_lang_first/protected/controllers/AreaController.php</file>
+            <file>file:/Applications/XAMPP/htdocs/yii_projects/scripting_lang_first/protected/views/area/update.php</file>
+            <file>file:/Applications/XAMPP/htdocs/yii_projects/scripting_lang_first/javascript/application.js</file>
+            <file>file:/Applications/XAMPP/htdocs/yii_projects/scripting_lang_first/protected/yiic</file>
+            <file>file:/Applications/XAMPP/htdocs/yii_projects/scripting_lang_first/protected/views/client/view.php</file>
+            <file>file:/Applications/XAMPP/htdocs/yii_projects/scripting_lang_first/css/bg.gif</file>
+            <file>file:/Applications/XAMPP/htdocs/yii_projects/scripting_lang_first/css/screen.css</file>
+            <file>file:/Applications/XAMPP/htdocs/yii_projects/scripting_lang_first/protected/views/client/index.php</file>
+            <file>file:/Applications/XAMPP/htdocs/yii_projects/scripting_lang_first/index.php</file>
+            <file>file:/Applications/XAMPP/htdocs/yii_projects/scripting_lang_first/protected/views/site/index.php</file>
+            <file>file:/Applications/XAMPP/htdocs/yii_projects/scripting_lang_first/protected/views/area/_form.php</file>
+            <file>file:/Applications/XAMPP/htdocs/yii_projects/scripting_lang_first/protected/views/area/index.php</file>
+            <file>file:/Applications/XAMPP/htdocs/yii_projects/scripting_lang_first/protected/data/database_schema.sql</file>
+            <file>file:/Applications/XAMPP/htdocs/yii_projects/scripting_lang_first/protected/yiic.php</file>
+            <file>file:/Applications/XAMPP/htdocs/yii_projects/scripting_lang_first/protected/views/layouts/column1.php</file>
+            <file>file:/Applications/XAMPP/htdocs/yii_projects/scripting_lang_first/protected/views/layouts/main.php</file>
+            <file>file:/Applications/XAMPP/htdocs/yii_projects/scripting_lang_first/protected/views/site/login.php</file>
+            <file>file:/Applications/XAMPP/htdocs/yii_projects/scripting_lang_first/protected/models/Area.php</file>
+            <file>file:/Applications/XAMPP/htdocs/yii_projects/scripting_lang_first/css/form.css</file>
+            <file>file:/Applications/XAMPP/htdocs/yii_projects/scripting_lang_first/protected/views/area/admin.php</file>
+            <file>file:/Applications/XAMPP/htdocs/yii_projects/scripting_lang_first/protected/models/ContactForm.php</file>
+            <file>file:/Applications/XAMPP/htdocs/yii_projects/scripting_lang_first/protected/controllers/ClientController.php</file>
+            <file>file:/Applications/XAMPP/htdocs/yii_projects/scripting_lang_first/protected/views/client/update.php</file>
+            <file>file:/Applications/XAMPP/htdocs/yii_projects/scripting_lang_first/protected/config/test.php</file>
+            <file>file:/Applications/XAMPP/htdocs/yii_projects/scripting_lang_first/css/print.css</file>
+            <file>file:/Applications/XAMPP/htdocs/yii_projects/scripting_lang_first/protected/config/main.php</file>
         </group>
     </open-files>
 </project-private>

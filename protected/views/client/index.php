@@ -14,7 +14,8 @@ $this->menu=array(
 
 <h1>Clients</h1>
 
-<?php $this->widget('zii.widgets.CListView', array(
+<?php $this->widget('yiibooster.widgets.TbListView', array(
 	'dataProvider'=>$dataProvider,
 	'itemView'=>'_view',
+        
 )); ?>

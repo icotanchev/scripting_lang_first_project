@@ -29,14 +29,15 @@
 	</div><!-- header -->
 
 	<div id="mainmenu">
-		<?php $this->widget('zii.widgets.CMenu',array(
-			'items'=>array(
-				//array('label'=>'Home', 'url'=>array('/site/index')),
-				array('label'=>'List Areas', 'url'=>array('/area/index')),
-				array('label'=>'Clients', 'url'=>array('/client/index'))
-			),
-		)); ?>
-	</div><!-- mainmenu -->
+               <?php               
+                $this->widget('yiibooster.widgets.TbMenu', array(
+                        'type' => TbHtml::NAV_TYPE_TABS,
+                        'items' => array(
+                         array('label'=>'List Areas', 'url'=>array('/area/index')),
+                         array('label'=>'Clients', 'url'=>array('/client/index'))
+                        ),))
+                ; ?>
+	</div> 
 
 	<?php echo $content; ?>
 

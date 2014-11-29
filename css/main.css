@@ -1,10 +1,10 @@
 body
 {
-	margin: 0;
+        margin: 0;
 	padding: 0;
-	color: #555;
+	color: #555;;
 	font: normal 10pt Arial,Helvetica,sans-serif;
-	background: #EFEFEF;
+	background: #FFF;
 }
 
 #page
@@ -18,13 +18,13 @@ body
 #header
 {
 	margin: 0;
-	padding: 0;
-	border-top: 3px solid #C9E0ED;
+	padding: 10pt;
 }
 
 #content
 {
-    padding: 20px;
+    margin-top: 30px;
+    padding: 1.3em;
 }
 
 #sidebar
@@ -43,18 +43,20 @@ body
 
 #logo
 {
-	padding: 10px 20px;
+	padding: 10px 10px;
 	font-size: 200%;
+        margin-left: -20px;
+        margin-bottom: 15px;
 }
 
-#mainmenu
+/*#mainmenu
 {
-	background:white url(bg.gif) repeat-x left top;
-}
+	background: #E3E3E3;
+}*/
 
-#mainmenu ul
+/*#mainmenu ul
 {
-	padding:6px 20px 5px 20px;
+	padding:16px 20px 8px 20px;
 	margin:0px;
 }
 
@@ -67,7 +69,7 @@ body
 {
 	color:#ffffff;
 	background-color:transparent;
-	font-size:12px;
+	font-size:16px;
 	font-weight:bold;
 	text-decoration:none;
 	padding:5px 8px;
@@ -78,13 +80,13 @@ body
 	color: #6399cd;
 	background-color:#EFF4FA;
 	text-decoration:none;
-}
+}*/
 
-#area_real_loc 
+/*#area_real_loc 
 {
    margin-left: 6em;
    font-size: 17px; 
-}
+}*/
 
 div.flash-error, div.flash-notice, div.flash-success
 {
@@ -137,10 +139,27 @@ div.form .rememberMe label
 div.view
 {
 	padding: 10px;
-	margin: 10px 0;
-	border: 1px solid #C9E0ED;
         font-size: 115%;
         background-color: #FEFEFE;;
+}
+
+ul.nav.nav-list
+{
+    margin-top: 3em;
+    margin-left: 3em;
+    font-size:17px;
+    border: 1px solid #C9E0ED;
+}
+
+
+/*#yw2
+{
+    width: 167px;
+}*/
+
+div.panel-heading
+{
+  font-size: 14px;
 }
 
 div.view_with_contain
@@ -164,13 +183,19 @@ div.client_label
    font-size: 21px;
 }
 
-input.form-control
+button.btn.btn-success 
+{
+  margin-bottom: 1em;
+  margin-top: 1em;
+  width: 15em; 
+}
+/*input.form-control
 {
    width:200px; 
    height:30px;
    font-size:18px;
    color:#1657BD;
-}
+}*/
 
 div.breadcrumbs
 {
@@ -190,7 +215,12 @@ div.search-form
 	background: #eee;
 }
 
-.portlet
+span.label.label-default
+{
+    font-size: 160%; 
+}
+
+/*.portlet
 {
 
 }
@@ -198,25 +228,25 @@ div.search-form
 .portlet-decoration
 {
 	padding: 3px 8px;
-	background: #B7D6E7;
-	border-left: 5px solid #6FACCF;
+	background: #55F296;
+	border-left: 5px solid #3BAD6B;
 }
 
 .portlet-title
 {
-	font-size: 12px;
+	font-size: 16px;
 	font-weight: bold;
-	padding: 0;
+	padding: 5px;
 	margin: 0;
-	color: #298dcd;
+	color: white;
 }
 
 .portlet-content
 {
 	font-size:0.9em;
 	margin: 0 0 15px 0;
-	padding: 5px 8px;
-	background:#EFFDFF;
+	padding: 15px 18px;
+        background:#F0F7E6;
 }
 
 .portlet-content ul
@@ -247,20 +277,35 @@ div.search-form
 
 .operations li a
 {
-	font: bold 12px Arial;
+	font: bold 16px Arial;
 	color: #0066A4;
 	display: block;
 	padding: 2px 0 2px 8px;
-	line-height: 15px;
+	line-height: 23px;
 	text-decoration: none;
 }
 
 .operations li a:visited
 {
-	color: #0066A4;
+	color: #394A99;
 }
 
 .operations li a:hover
 {
-	background: #80CFFF;
+	background: #3BAD6B;
+        color:white;
+}*/
+
+.nav-tabs {
+    font-size:23px;
+}
+
+#area-form 
+{
+    margin-top:20px;
+}
+
+div.list-view
+{
+   padding-top: 0px;
 }

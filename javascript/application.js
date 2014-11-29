@@ -100,7 +100,7 @@ function showArea() {
   count = 0;
   
   jQuery("#points").val(points+','+points[0]);
-
+  
   points = [];
   markers = [];
   count = 0;

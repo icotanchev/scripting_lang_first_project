@@ -21,11 +21,6 @@
 		<?php echo $form->textField($model,'area_name',array('size'=>25,'maxlength'=>25)); ?>
 	</div>
 
-	<div class="row">
-		<?php echo $form->label($model,'geo'); ?>
-		<?php echo $form->textField($model,'geo'); ?>
-	</div>
-
 	<div class="row buttons">
 		<?php echo CHtml::submitButton('Search'); ?>
 	</div>

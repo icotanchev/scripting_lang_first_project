@@ -6,33 +6,41 @@
 
 <div class="form">
 
-<div id="map-canvas" style="width: 50em; height: 30em; position: relative; overflow: hidden; -webkit-transform: translateZ(0px); background-color: rgb(229, 227, 223);"></div>
+<div id="map-canvas" style="width: 50.6em; height: 30em; position: relative; overflow: hidden; -webkit-transform: translateZ(0px); background-color: rgb(229, 227, 223);"></div>
 
 <div class="area-form">
-    <?php $form=$this->beginWidget('CActiveForm', array(
-	'id'=>'area-form',
-	'enableAjaxValidation'=>false,
-)); ?>
-<!--    <p class="note">Fields with <span class="required">*</span> are required.</p>-->
+    <?php
+        $form = $this->beginWidget(
+        'yiibooster.widgets.TbActiveForm',
+             array(
+                'id' => 'area-form',
+                'htmlOptions' => array('class' => 'well'), // for inset effect
+                'method'=>'post',
+            )
+        );
+ 
+        echo $form->textFieldGroup($model, 'area_name');
 
-    <div class="row">
-        <?php echo $form->labelEx($model,'area_name'); ?>
-        <?php echo $form->textField($model,'area_name',array('size'=>25,'maxlength'=>25)); ?>
-    </div>
+        echo $form->dropDownListGroup($model, 'client_id',
+                                                            array('wrapperHtmlOptions' => array('class' => 'col-sm-5',),
+                                                                  'widgetOptions' =>  array('data' => $model->getClients(),
+                                                                                             'htmlOptions' => array(),)
+                                                            )
+                                    ); ?>
 
-    <div class="row">
-        <?php echo $form->labelEx($model,'client_name'); ?>
-        <?php echo CHtml::activeDropDownList($model, 'client_id', $model->getClients()); ?>
-    </div>
-    
-    <input type="hidden" name="points" id="points">
-<!--    <button type="button" class="btn btn-primary" name="show" id="show" onclick="showArea()">Show Zone</button>-->
     <div class="row buttons" id="create_area_button">
-        <?php
-        $optins = array('style'=>'width:13em; height:2em;');
-        echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save', $optins); ?>
-    </div>
-
-<?php $this->endWidget(); ?>
-
-</div><!-- form -->
+     <?php   $this->widget('yiibooster.widgets.TbButton',
+                                            array(
+                                            'label' => $model->isNewRecord ? 'Create' : 'Save',
+                                            'context' => 'success',
+                                            'buttonType' => 'submit',
+                                             'size' => 'default',
+                                            )
+     ); ?>
+     </div>
+    
+<input type="hidden" name="points" id="points">
+<?php $this->endWidget();
+unset($form); ?>
+</div>
+</div>

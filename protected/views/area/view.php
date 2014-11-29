@@ -17,7 +17,7 @@ $this->menu=array(
 $points = Area::getAreaPoints($model->id);
 ?>
 
-<h1>Area "<?php echo $model->area_name; ?>"</h1>
+<h2>Area "<?php echo $model->area_name; ?>"</h2>
 
 <div id="map_card" style="width: 50em; height: 30em; position: relative; overflow: hidden; -webkit-transform: translateZ(0px); background-color: rgb(229, 227, 223);"></div>
 
@@ -113,7 +113,7 @@ $points = Area::getAreaPoints($model->id);
         lat.className =  "form-control";
         lat.placeholder = "Enter Lat";
         lat.id = "point"+count+"Lat";
-        lat.setAttribute('style', 'margin-left:10px');
+        lat.setAttribute('style', 'margin-left:10px; margin-top:5px;');
         lat.setAttribute('disabled', 'disabled');
 
         s.appendChild(lat);
@@ -123,7 +123,7 @@ $points = Area::getAreaPoints($model->id);
         ln.className =  "form-control";
         ln.placeholder = "Enter Lng";
         ln.id = "point"+count+"Lng";
-        ln.setAttribute('style', 'margin-left:10px');
+        ln.setAttribute('style', 'margin-left:10px; margin-top:5px;');
         ln.setAttribute('disabled', 'disabled');
 
         s.appendChild(ln);
