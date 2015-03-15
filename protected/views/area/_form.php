@@ -41,6 +41,5 @@ unset($form); ?>
 </div>
 
 <script>
-  // initializeMap();
-  // initMap = new Map().initialize;
+  initMap = new Map().initialize();
 </script>

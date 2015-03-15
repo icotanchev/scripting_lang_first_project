@@ -18,7 +18,7 @@ $this->menu=array(
 
 <h1>View Client #<?php echo $model->id; ?></h1>
 
-<div id="map_card" style="width: 50em; height: 30em; position: relative; overflow: hidden; -webkit-transform: translateZ(0px); background-color: rgb(229, 227, 223); margin-bottom: 20px;"></div>
+<div id="map-canvas" style="width: 50.6em; height: 30em; position: relative; overflow: hidden; -webkit-transform: translateZ(0px); background-color: rgb(229, 227, 223);"></div>
 
 <?php $this->widget('yiibooster.widgets.TbDetailView', array(
 	'data'=>$model,
@@ -29,43 +29,12 @@ $this->menu=array(
 	),
 )); ?>
 
-<input type="hidden" name="client_pos" id="client_position" value="<?php echo Client::model()->getClientPosition($model->id);?>">
+<div class="client_label"
+  <b>Client cordinates:</b>
+  <div id="client_position"><?php echo Client::model()->getClientPosition($model->id); ?></div>
+</div>
 
 <script>
-    var clients_position = jQuery("#client_position")[0].value.replace('POINT(', '').replace(')', '').split(' ');
-    var myPosition = new google.maps.LatLng(clients_position[0], clients_position[1]);
-    
-    var mapOptions = {
-        zoom: 16,
-        center: myPosition,
-    };
-
-    var map = new google.maps.Map(document.getElementById('map_card'), mapOptions);
-    
-    var contentString = '<div id="content">'+
-      '<b> Lat: '+clients_position[0]+'</b><br>'+
-      '<b> Lng: '+clients_position[1]+'</b>'+
-      '</div>';
-
-    var infowindow = new google.maps.InfoWindow({
-        content: contentString,
-        maxWidth: 200
-    });
-    
-    var client_marker = new google.maps.Marker({
-        position: myPosition,//new google.maps.LatLng(clients_position[0], clients_position[1]),
-        icon: {
-          path: google.maps.SymbolPath.CIRCLE,
-          scale: 10
-        },
-        map: map
-    });
-    
-     
-    
-    google.maps.event.addListener(client_marker, 'click', function() {
-        infowindow.open(map,client_marker);
-      });
-    
-    google.maps.event.addDomListener(window, 'load', initialize);
+    client = jQuery("#client_position")[0].innerText.replace('POINT(', '').replace(')', '').split(' ');
+    initMap = new Map().initializeClientPosition(client);
 </script>

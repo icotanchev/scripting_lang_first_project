@@ -1,39 +1,73 @@
-var Map = new function() {
-  this.points = [];
-  this.markers = [];
-  this.map = new Object();
+function Map(instance) {
+  this.instance = instance;
+  this.points   = [];
+  this.markers  = [];
+  this.map      = new Object();
 
   this.initialize = function() {
-    mapOptions = {
-      zoom: 13,
-      center: new google.maps.LatLng(42.697708, 23.321868),
-      mapTypeId: google.maps.MapTypeId.TERRAIN
-    };
-
-    Map.map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+    mapOptions(13, new google.maps.LatLng(42.697708, 23.321868));
 
     google.maps.event.addListener(Map.map, 'click', function(event){
-      Map.placeMarker(event.latLng);
+      placeMarker(event.latLng);
     });
   };
 
-  this.initializeWithPoints = function(points) {
+  this.initializeWithPoints = function(points, client_position) {
+    mapOptions(10, new google.maps.LatLng(points[0].replace("(", "").replace(")", "").split(' ')[0], points[0].replace("(", "").replace(")", "").split(' ')[1]));
+
+    for(k = 0; k < points.length - 1; k++){
+      placeMarker(new google.maps.LatLng(points[k].replace("(", "").replace(")", "").split(' ')[0], points[k].replace("(", "").replace(")", "").split(' ')[1]));
+    }
+
+    if(client_position)
+      setClientPosition(client_position)
+
+    this.showArea();
+  };
+
+  this.initializeClientPosition = function(client_position) {
+    mapOptions(16, new google.maps.LatLng(client_position[0], client_position[1]));
+    setClientPosition(client_position);
+  };
+
+  this.showArea = function() {
+    newArea = new google.maps.Polygon({
+      paths: Map.points,
+      strokeColor: '#FF0000',
+      strokeOpacity: 0.8,
+      strokeWeight: 2,
+      fillColor: '#FF0000',
+      fillOpacity: 0.35
+    });
+    
+    newArea.setMap(Map.map);
+  }
+
+  //Private Methods
+  function mapOptions(zoom, center){
     mapOptions = {
-      zoom: 10,
-      center: new google.maps.LatLng(points[0].replace("(", "").replace(")", "").split(' ')[0], points[0].replace("(", "").replace(")", "").split(' ')[1]),
+      zoom: zoom,
+      center: center,
       mapTypeId: google.maps.MapTypeId.TERRAIN
     };
 
     Map.map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+    Map.points  = [];
+    Map.markers = [];
+  }
 
-    for(k = 0; k < points.length - 1; k++){
-      Map.placeMarker(new google.maps.LatLng(points[k].replace("(", "").replace(")", "").split(' ')[0], points[k].replace("(", "").replace(")", "").split(' ')[1]));
-    }
+  function setClientPosition(client_position) {
+    new google.maps.Marker({
+      position: new google.maps.LatLng(client_position[0], client_position[1]),
+      icon: {
+        path: google.maps.SymbolPath.CIRCLE,
+        scale: 10
+      },
+      map: Map.map
+    });
+  }
 
-    Map.showArea();
-  };
-
-  this.placeMarker = function(event) {
+  function placeMarker (event) {
     marker = new google.maps.Marker({
       position: event,
     });
@@ -42,10 +76,10 @@ var Map = new function() {
     marker.setAnimation(google.maps.Animation.BOUNCE);
     marker.setMap(Map.map);
     Map.points.push(event);
-    Map.drowPoints();
+    drawPoints();
   };
 
-  this.drowPoints = function() {
+  function drawPoints() {
     count = Map.points.length;
     current_point = Map.points[Map.points.length-1];
     points_lat_lng = ['Lat', 'Lng']
@@ -66,19 +100,6 @@ var Map = new function() {
     document.getElementById("point" + count + "Lng").value = current_point.lng();
   };
 
-  this.showArea = function() {
-    newArea = new google.maps.Polygon({
-      paths: Map.points,
-      strokeColor: '#FF0000',
-      strokeOpacity: 0.8,
-      strokeWeight: 2,
-      fillColor: '#FF0000',
-      fillOpacity: 0.35
-    });
-    
-    newArea.setMap(Map.map);
-  }
-
   function create_and_stylized_point(parant_element, element, count){
     input_element = document.createElement("input");
     setAttributes(input_element, {'id': 'point'+count+element, 'class': 'form-control', 'type': 'text', 'style': 'margin-left:4px', 'disabled': 'disabled'});
@@ -92,5 +113,6 @@ var Map = new function() {
     }
   };
 
-  google.maps.event.addDomListener(window, 'load', this.initialize);
+  if(this.instance == 'initialize')
+    google.maps.event.addDomListener(window, 'load', this.initialize);
 }

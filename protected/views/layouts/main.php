@@ -17,6 +17,7 @@
 	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
 	<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/javascript/application.js" ></script>
+	<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/javascript/map.js" ></script>
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>
 
@@ -33,8 +34,8 @@
                 $this->widget('yiibooster.widgets.TbMenu', array(
                         'type' => TbHtml::NAV_TYPE_TABS,
                         'items' => array(
-                         array('label'=>'List Areas', 'url'=>array('/area/index')),
-                         array('label'=>'Clients', 'url'=>array('/client/index'))
+                         array('label'=>'List Areas', 'url'=>array('/area/index'), 'itemOptions'=>array('id' => 'list_area_main_menu')),
+                         array('label'=>'Clients', 'url'=>array('/client/index'), 'itemOptions'=>array('id' => 'clients_main_menu'))
                         ),))
                 ; ?>
 	</div> 

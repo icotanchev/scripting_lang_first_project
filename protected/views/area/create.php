@@ -1,5 +1,3 @@
-<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/javascript/map.js" ></script>
-
 <?php
 /* @var $this AreaController */
 /* @var $model Area */

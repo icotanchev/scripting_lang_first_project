@@ -7,8 +7,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Create Area', 'url'=>array('create')),
-	array('label'=>'Manage Area', 'url'=>array('admin')),
+	array('label'=>'Create Area', 'url'=>array('create'), 'itemOptions'=>array('id' => 'create_area_side_menu')),
+	array('label'=>'Manage Area', 'url'=>array('admin'), 'itemOptions'=>array('id' => 'manage_area_side_menu')),
 );
 ?>
 <?php $this->widget(
