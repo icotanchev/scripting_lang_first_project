@@ -1,9 +1,3 @@
-<?php
-/* @var $this AreaController */
-/* @var $model Area */
-/* @var $form CActiveForm */
-?>
-
 <div class="form">
 
 <div id="map-canvas" style="width: 50.6em; height: 30em; position: relative; overflow: hidden; -webkit-transform: translateZ(0px); background-color: rgb(229, 227, 223);"></div>

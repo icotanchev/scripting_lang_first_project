@@ -46,6 +46,16 @@ function Map(instance) {
     });
     
     newArea.setMap(Map.map);
+
+    lat_center = 0;
+    lng_center = 0;
+
+    for (i = 0; i < newArea.getPath()["j"].length; i++) {
+      lat_center = lat_center + newArea.getPath()["j"][i].lat();
+      lng_center = lng_center + newArea.getPath()["j"][i].lng();
+    };
+
+    Map.map.setCenter(new google.maps.LatLng(lat_center/newArea.getPath()["j"].length, lng_center/newArea.getPath()["j"].length));
   }
 
   //Private Methods

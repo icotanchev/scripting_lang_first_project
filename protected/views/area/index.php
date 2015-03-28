@@ -1,6 +1,4 @@
 <?php
-/* @var $this AreaController */
-/* @var $dataProvider CActiveDataProvider */
 
 $this->breadcrumbs=array(
 	'Areas',

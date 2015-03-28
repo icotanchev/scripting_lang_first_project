@@ -1,9 +1,3 @@
-<?php
-/* @var $this ClientController */
-/* @var $model Client */
-/* @var $form CActiveForm */
-?>
-
 <div class="form">
     
     <div class="area-form">

@@ -1,6 +1,4 @@
 <?php
-/* @var $this AreaController */
-/* @var $model Area */
 
 $this->breadcrumbs=array(
 	'Areas'=>array('index'),

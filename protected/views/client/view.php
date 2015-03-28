@@ -1,6 +1,4 @@
 <?php
-/* @var $this ClientController */
-/* @var $model Client */
 
 $this->breadcrumbs=array(
 	'Clients'=>array('index'),

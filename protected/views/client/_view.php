@@ -1,8 +1,3 @@
-<?php
-/* @var $this ClientController */
-/* @var $data Client */
-?>
-
 <div class="panel panel-success">
     <div class="panel-heading">
         <b><?php echo CHtml::encode($data->getAttributeLabel('name')); ?>:</b>
