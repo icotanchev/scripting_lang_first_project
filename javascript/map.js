@@ -1,8 +1,9 @@
 function Map(instance) {
-  this.instance = instance;
-  this.points   = [];
-  this.markers  = [];
-  this.map      = new Object();
+  this.instance        = instance;
+  this.points          = [];
+  this.markers         = [];
+  this.client_location = new Object();
+  this.map             = new Object();
 
   this.initialize = function() {
     mapOptions(13, new google.maps.LatLng(42.697708, 23.321868));
@@ -28,6 +29,10 @@ function Map(instance) {
   this.initializeClientPosition = function(client_position) {
     mapOptions(16, new google.maps.LatLng(client_position[0], client_position[1]));
     setClientPosition(client_position);
+  };
+
+  this.listenForClientPositionChange = function(client_position) {
+    Map.client_location.setPosition(new google.maps.LatLng(client_position[0], client_position[1]));
   };
 
   this.showArea = function() {
@@ -57,14 +62,17 @@ function Map(instance) {
   }
 
   function setClientPosition(client_position) {
-    new google.maps.Marker({
+    current_client_position = new google.maps.Marker({
       position: new google.maps.LatLng(client_position[0], client_position[1]),
       icon: {
         path: google.maps.SymbolPath.CIRCLE,
         scale: 10
       },
+      title: "client position",
       map: Map.map
     });
+
+    Map.client_location = current_client_position;
   }
 
   function placeMarker (event) {

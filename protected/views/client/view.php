@@ -16,7 +16,7 @@ $this->menu=array(
 );
 ?>
 
-<h1>View Client #<?php echo $model->id; ?></h1>
+<h1 id="client_info_id">View Client #<?php echo $model->id; ?></h1>
 
 <div id="map-canvas" style="width: 50.6em; height: 30em; position: relative; overflow: hidden; -webkit-transform: translateZ(0px); background-color: rgb(229, 227, 223);"></div>
 
@@ -35,6 +35,24 @@ $this->menu=array(
 </div>
 
 <script>
-    client = jQuery("#client_position")[0].innerText.replace('POINT(', '').replace(')', '').split(' ');
-    initMap = new Map().initializeClientPosition(client);
+  client = jQuery("#client_position")[0].innerText.replace('POINT(', '').replace(')', '').split(' ');
+  initMap = new Map().initializeClientPosition(client);
+
+  var interval = 1000;  // 1000 = 1 second
+  function update_client_movment() {
+    find_client_id = jQuery("#client_info_id")[0].innerHTML.split("#")[1];
+    
+    $.ajax({
+      type: 'POST',
+      url: 'clientlocation/'+find_client_id,
+      dataType: 'json',
+      success: function (data) {
+        new Map().listenForClientPositionChange(data)
+      },
+      complete: function (data) {
+        setTimeout(update_client_movment, interval);
+      }
+    });
+  }
+  setTimeout(update_client_movment, interval);
 </script>
