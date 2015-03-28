@@ -38,21 +38,5 @@ $this->menu=array(
   client = jQuery("#client_position")[0].innerText.replace('POINT(', '').replace(')', '').split(' ');
   initMap = new Map().initializeClientPosition(client);
 
-  var interval = 1000;  // 1000 = 1 second
-  function update_client_movment() {
-    find_client_id = jQuery("#client_info_id")[0].innerHTML.split("#")[1];
-    
-    $.ajax({
-      type: 'POST',
-      url: 'clientlocation/'+find_client_id,
-      dataType: 'json',
-      success: function (data) {
-        new Map().listenForClientPositionChange(data)
-      },
-      complete: function (data) {
-        setTimeout(update_client_movment, interval);
-      }
-    });
-  }
-  setTimeout(update_client_movment, interval);
+  setTimeout(update_client_movment, 1000);
 </script>

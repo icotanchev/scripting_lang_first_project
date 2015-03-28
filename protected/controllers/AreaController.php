@@ -16,7 +16,7 @@ class AreaController extends Controller
     {
         return array(
             array('allow',  // allow all users to perform 'index' and 'view' actions
-                'actions'=>array('index','view'),
+                'actions'=>array('index','view', 'clientlocation'),
                 'users'=>array('*'),
             ),
             array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -135,5 +135,12 @@ class AreaController extends Controller
             echo CActiveForm::validate($model);
             Yii::app()->end();
         }
+    }
+
+    public function actionClientLocation($id)
+    {
+        header('Content-type: application/json');
+        $location = str_replace("POINT(", "", Client::model()->getClientPosition($id));
+        echo CJSON::encode(explode(" ", str_replace(")", "", $location)));
     }
 }

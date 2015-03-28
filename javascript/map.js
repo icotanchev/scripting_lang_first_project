@@ -14,7 +14,7 @@ function Map(instance) {
   };
 
   this.initializeWithPoints = function(points, client_position) {
-    mapOptions(10, new google.maps.LatLng(points[0].replace("(", "").replace(")", "").split(' ')[0], points[0].replace("(", "").replace(")", "").split(' ')[1]));
+    mapOptions(11, new google.maps.LatLng(points[0].replace("(", "").replace(")", "").split(' ')[0], points[0].replace("(", "").replace(")", "").split(' ')[1]));
 
     for(k = 0; k < points.length - 1; k++){
       placeMarker(new google.maps.LatLng(points[k].replace("(", "").replace(")", "").split(' ')[0], points[k].replace("(", "").replace(")", "").split(' ')[1]));
@@ -27,7 +27,7 @@ function Map(instance) {
   };
 
   this.initializeClientPosition = function(client_position) {
-    mapOptions(16, new google.maps.LatLng(client_position[0], client_position[1]));
+    mapOptions(11, new google.maps.LatLng(client_position[0], client_position[1]));
     setClientPosition(client_position);
   };
 

@@ -20,7 +20,7 @@
 <div id="map-canvas" style="width: 50.6em; height: 30em; position: relative; overflow: hidden; -webkit-transform: translateZ(0px); background-color: rgb(229, 227, 223);"></div>
 
 <div class="client_label">
-  <b><?php echo "Client" ?>:</b>
+  <b id="client_info_id">Client #<?php echo $model->id; ?></b>
   <?php echo CHtml::link(CHtml::encode(array_values(Client::getClientName($model->client_id))[0]['name']), array('client/view', 'id' => $model->client_id));?><br />
 </div>  
 
@@ -42,4 +42,6 @@
   client = jQuery("#client_position")[0].innerText.replace('POINT(', '').replace(')', '').split(' ');
 
   initMap = new Map().initializeWithPoints(points, client);
+
+  setTimeout(update_client_movment, 1000);
 </script>
