@@ -137,10 +137,13 @@ class AreaController extends Controller
         }
     }
 
-    public function actionClientLocation($id)
+    public function actionClientLocation()
     {
-        header('Content-type: application/json');
-        $location = str_replace("POINT(", "", Client::model()->getClientPosition($id));
-        echo CJSON::encode(explode(" ", str_replace(")", "", $location)));
+        if(isset($_GET['client_id']))
+        {
+            header('Content-type: application/json');
+            $location = str_replace("POINT(", "", Client::model()->getClientPosition($_GET['client_id']));
+            echo CJSON::encode(explode(" ", str_replace(")", "", $location)));
+        }
     }
 }

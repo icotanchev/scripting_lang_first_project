@@ -13,11 +13,13 @@ function update_client_movment() {
   find_client_id = jQuery("#client_info_id")[0].innerHTML.split("#")[1];
   
   $.ajax({
-    type: 'POST',
-    url: 'clientlocation/'+find_client_id,
+    type: 'GET',
+    url: 'clientlocation/',
+    data: {client_id: find_client_id},
     dataType: 'json',
     success: function (data) {
       new Map().listenForClientPositionChange(data)
+      $("#client_position")[0].innerHTML = "POINT(" + data.join(' ') + ")";
     },
     complete: function (data) {
       setTimeout(update_client_movment, 1000);

@@ -29,7 +29,9 @@ $this->menu=array(
 
 <div class="client_label"
   <b>Client cordinates:</b>
-  <div id="client_position"><?php echo Client::model()->getClientPosition($model->id); ?></div>
+  <div id="client_position">
+    <?php echo Client::model()->getClientPosition($model->id); ?>
+  </div>
 </div>
 
 <script>

@@ -16,6 +16,6 @@ while true
 		ActiveRecord::Base.connection.execute(updateposition)
 	end
 
-	sleep(10)
+	sleep(1)
 end
 
