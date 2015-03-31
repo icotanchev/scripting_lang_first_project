@@ -22,3 +22,7 @@ $this->menu=array(
 	'itemView'=>'_view',
     )
 ); ?>
+
+<script>
+    update_area();
+</script>

@@ -1,12 +1,7 @@
 <?php
 
-$this->breadcrumbs=array(
-	'Areas'=>array('index'),
-	'Create',
-);
-
 $this->menu=array(
-	array('label'=>'List Area', 'url'=>array('index')),
+	array('label'=>'List Area', 'url'=>array('/')),
 	array('label'=>'Manage Area', 'url'=>array('admin')),
 );
 ?>

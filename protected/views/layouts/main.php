@@ -34,7 +34,7 @@
                 $this->widget('yiibooster.widgets.TbMenu', array(
                         'type' => TbHtml::NAV_TYPE_TABS,
                         'items' => array(
-                         array('label'=>'List Areas', 'url'=>array('/area/index'), 'itemOptions'=>array('id' => 'list_area_main_menu')),
+                         array('label'=>'List Areas', 'url'=>array('/'), 'itemOptions'=>array('id' => 'list_area_main_menu')),
                          array('label'=>'Clients', 'url'=>array('/client/index'), 'itemOptions'=>array('id' => 'clients_main_menu'))
                         ),))
                 ; ?>

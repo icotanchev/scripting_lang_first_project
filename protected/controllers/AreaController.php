@@ -16,7 +16,7 @@ class AreaController extends Controller
     {
         return array(
             array('allow',  // allow all users to perform 'index' and 'view' actions
-                'actions'=>array('index','view', 'clientlocation'),
+                'actions'=>array('index','view', 'clientlocation', 'areacontainclient'),
                 'users'=>array('*'),
             ),
             array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -144,6 +144,16 @@ class AreaController extends Controller
             header('Content-type: application/json');
             $location = str_replace("POINT(", "", Client::model()->getClientPosition($_GET['client_id']));
             echo CJSON::encode(explode(" ", str_replace(")", "", $location)));
+        }
+    }
+
+    public function actionAreaContainClient()
+    {
+        if(isset($_GET['client_id']) && isset($_GET['area_id']))
+        {
+            header('Content-type: application/json');
+            $res = (array_values(Area::areaContainsPoint($_GET['client_id'], $_GET['area_id'])[0])[0] != '1') ? true : false;
+            echo CJSON::encode([$res, $_GET['area_id']]);
         }
     }
 }
